@@ -3,11 +3,10 @@ kind: Service
 metadata:
   name: myapp-service
 spec:
-  type: NodePort  # Change the service type to NodePort
+  type: LoadBalancer  # Change the service type to LoadBalancer
   selector:
     app: myapp
   ports:
     - protocol: TCP
-      port: 80        # The port that will be exposed
-      targetPort: 8080 # The port on the container that the service will forward to
-      nodePort: 30000  # Specify a NodePort (choose a port in the range 30000-32767)
+      port: 80         # The port that will be exposed
+      targetPort: 8080  # The port on the container that the service will forward to
